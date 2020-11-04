@@ -42,17 +42,16 @@ export default class Overpaint extends THREE.Object3D {
     
             var Params = function(){
                 this.amount = 50;
-                this.lineWidth = 6.5;
-                // this.dashArray = 0.0;
-                // this.dashOffset = 0.0;
-                // this.dashRatio = 0.0;
+                this.lineWidth = 7.0;
+                this.width_amp = 0.5;
+                this.width_freq = 1.0;
+                this.dashGradate = 2.0;
                 this.taper = 'none';
                 this.strokes = false;
                 this.sizeAttenuation = true;
                 // this.animateWidth = false;
                 this.spread = false;
                 this.autoUpdate = true;//これ、DATでいれた値を反映させるのに大事！！！
-                // this.animateVisibility = true;
                 // this.animateDashOffset = true;
                 // this.strokes = true;
 
@@ -98,8 +97,10 @@ export default class Overpaint extends THREE.Object3D {
         
             var folder1 = gui.addFolder('overpaint');
                 // folder1.add( this.params, 'amount', 30, 100 ).onChange( this.datUpdate );
-                // folder1.add( this.params, 'dashArray', 0, 1 ).onChange( this.datUpdate );
                 folder1.add( this.params, 'lineWidth', 0, 20 ).onChange( this.datUpdate );
+                folder1.add( this.params, 'width_amp', 0, 10 ).onChange( this.datUpdate );
+                folder1.add( this.params, 'width_freq', 0, 5 ).onChange( this.datUpdate );
+                folder1.add( this.params, 'dashGradate', 0, 8 ).onChange( this.datUpdate );
                 folder1.add( this.params, 'opc_freq', 0, 2 ).onChange( this.datUpdate );
                 folder1.add( this.params, 'opc_base', 0, 1 ).onChange( this.datUpdate );
                 folder1.add( this.params, 'rag_speed', 0, 3).onChange( this.datUpdate );
@@ -109,20 +110,17 @@ export default class Overpaint extends THREE.Object3D {
         }
         
         datUpdate() {
-            // size
             // this.amount = this.params.amount;
             // this.init;
-
-            // this.dashArray = this.params.dashArray;
+            this.width_amp = this.params.width_amp;
+            this.width_freq = this.params.width_freq;
             this.lineWidth = this.params.lineWidth;
+            this.dashGradate = this.params.dashGradate;
             this.opc_freq = this.params.opc_freq;
             this.opc_base = this.params.opc_base;
             this.rag_speed = this.params.rag_speed;
             this.offset_speed = this.params.offset_speed;
-    
         }
-    
-    
     
         init() {
             this.clearLines();
@@ -306,8 +304,8 @@ export default class Overpaint extends THREE.Object3D {
             // var delta = this.clock.getDelta();//0.015~0.020
             var t = this.clock.getElapsedTime();
             this.lines.forEach( function( l, i ) {
-                l.material.uniforms.lineWidth.value = params.lineWidth * ( 1 + .5 * Math.sin( 1 * t + i ) );
-                // l.material.uniforms.lineWidth.value = lineWidths[ ~~Maf.randomInRange( 0, lineWidths.length ) ] * params.lineWidth;
+                l.material.uniforms.lineWidth.value = params.lineWidth * ( 1 + params.width_amp * Math.sin( params.width_freq * t + i ) );
+                l.material.uniforms.dashGradate.value = params.dashGradate;
 
 
                 // if( params.autoRotate ) l.rotation.y += .125 * delta;

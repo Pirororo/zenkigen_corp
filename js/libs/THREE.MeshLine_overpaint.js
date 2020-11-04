@@ -533,7 +533,7 @@
 		// '    if( useDash == 1. ){',
 		// '        c.a *= ceil(mod(vCounters + dashOffset, dashArray) - (dashArray * dashRatio));',//元
 		// '        c.a *= 0.8 /mod(vCounters + dashOffset, dashArray) - (dashArray * dashRatio);',//係数を0.1とかちっちゃくするともっと光のたまっぽくなる
-		'        c2.a *= 5.5*dashGradate *mod(vCounters + dashOffset, dashArray) - (dashArray * dashRatio);',//薄くなる方向上と逆//d2.0ashGradate 1.~10.//大きいとグラデ長い
+		'        c2.a *= dashGradate *mod(vCounters + dashOffset, dashArray) - (dashArray * dashRatio);',//薄くなる方向上と逆//d2.0ashGradate 1.~10.//大きいとグラデ長い
 		// '    }',
 	
 		// '    gl_FragColor = (c + c2)/2.0;',
