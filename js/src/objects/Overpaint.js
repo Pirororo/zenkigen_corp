@@ -41,7 +41,7 @@ export default class Overpaint extends THREE.Object3D {
     
     
             var Params = function(){
-                // this.amount = 50;
+                this.amount = 50;
                 this.lineWidth = 6.5;
                 // this.dashArray = 0.0;
                 // this.dashOffset = 0.0;
