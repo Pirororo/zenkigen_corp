@@ -187,6 +187,7 @@ export default class Circle extends THREE.Object3D {
 
   loadCSVandConvertToArray2D(){
       loadCSV("./js/src/data/kanto_7area_short.csv", e =>{
+              // "./js/src/data/kanto_7area_raw_short.csv"
           const result = e.result;
           this.data = convertCSVtoArray2D(result);
           

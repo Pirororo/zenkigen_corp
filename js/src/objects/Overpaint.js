@@ -42,7 +42,7 @@ export default class Overpaint extends THREE.Object3D {
     
             var Params = function(){
                 this.amount = 50;
-                this.lineWidth = 10;
+                this.lineWidth = 4;
                 // this.dashArray = 0.0;
                 // this.dashOffset = 0.0;
                 // this.dashRatio = 0.0;
@@ -56,9 +56,9 @@ export default class Overpaint extends THREE.Object3D {
                 // this.animateDashOffset = true;
                 // this.strokes = true;
 
-                this.opc_freq = 1.2;
+                this.opc_freq = 1.0;
                 this.opc_base = 0.4;
-                this.rag_speed = 0.9;
+                this.rag_speed = 2.0;
                 this.offset_speed = 0.01;
             };
             this.params = new Params();
