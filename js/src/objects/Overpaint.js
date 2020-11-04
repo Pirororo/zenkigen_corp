@@ -41,8 +41,8 @@ export default class Overpaint extends THREE.Object3D {
     
     
             var Params = function(){
-                this.amount = 50;
-                this.lineWidth = 4;
+                // this.amount = 50;
+                this.lineWidth = 6.5;
                 // this.dashArray = 0.0;
                 // this.dashOffset = 0.0;
                 // this.dashRatio = 0.0;
@@ -97,7 +97,7 @@ export default class Overpaint extends THREE.Object3D {
 
         
             var folder1 = gui.addFolder('overpaint');
-                folder1.add( this.params, 'amount', 30, 100 ).onChange( this.datUpdate );
+                // folder1.add( this.params, 'amount', 30, 100 ).onChange( this.datUpdate );
                 // folder1.add( this.params, 'dashArray', 0, 1 ).onChange( this.datUpdate );
                 folder1.add( this.params, 'lineWidth', 0, 20 ).onChange( this.datUpdate );
                 folder1.add( this.params, 'opc_freq', 0, 2 ).onChange( this.datUpdate );
@@ -110,7 +110,7 @@ export default class Overpaint extends THREE.Object3D {
         
         datUpdate() {
             // size
-            this.amount = this.params.amount;
+            // this.amount = this.params.amount;
             // this.init;
 
             // this.dashArray = this.params.dashArray;
