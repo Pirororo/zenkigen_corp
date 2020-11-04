@@ -109,7 +109,6 @@ export default class Circle extends THREE.Object3D {
     }
   }
 
-
   createMatCirc(){
 
     this.selectColorsPair = this.colorsPairList[ ~~Maf.randomInRange( 0, this.colorsPairList.length)];

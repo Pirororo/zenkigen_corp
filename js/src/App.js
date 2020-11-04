@@ -60,11 +60,12 @@ export class App{
       // var position = this._scene.camera.matrixWorld.getPosition().clone();
       // console.log(position);
 
+      // //時間経過による切り替え
       // this.frame += 1;
       // if(this.frame%240 ==0){
       //   this.sceneNUM += 1;
       // }
-      // if(this.sceneNUM >=2){
+      // if(this.sceneNUM >=4){
       //   this.sceneNUM = 0;
       //   this.frame = 0;
       // }

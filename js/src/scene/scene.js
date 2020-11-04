@@ -1,5 +1,4 @@
 // import * as THREE from '../../libs/three.module.js';
-import persCamera from '../camera/persCamera.js';
 import Ring_colorLine from '../objects/Ring_9th_colorCirc.js';
 import Ring_fill from '../objects/Ring_10th_fill.js';
 import Circle from '../objects/Circle.js';
@@ -13,8 +12,10 @@ export class Scene extends THREE.Scene {
         this.scene = 0;
 
         //カメラ
-        this._persCamera = new persCamera();//thisにする
+        this._persCamera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 10, 500);
         this.camera = this._persCamera; //初期値
+        this.camera.camPos = new THREE.Vector3(0, 0, -355);//9th
+        this.camera.position.set(this.camera.camPos.x,this.camera.camPos.y,this.camera.camPos.z);
         this.scene0_frag = false;
         this.scene1_frag = false;
         this.scene2_frag = false;
