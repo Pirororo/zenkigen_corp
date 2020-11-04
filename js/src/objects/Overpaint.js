@@ -59,7 +59,7 @@ export default class Overpaint extends THREE.Object3D {
                 this.opc_freq = 1.0;
                 this.opc_base = 0.4;
                 this.rag_speed = 2.0;
-                this.offset_speed = 0.01;
+                this.offset_speed = -0.01;
             };
             this.params = new Params();
             var gui = new dat.GUI();
@@ -103,7 +103,7 @@ export default class Overpaint extends THREE.Object3D {
                 folder1.add( this.params, 'opc_freq', 0, 2 ).onChange( this.datUpdate );
                 folder1.add( this.params, 'opc_base', 0, 1 ).onChange( this.datUpdate );
                 folder1.add( this.params, 'rag_speed', 0, 3).onChange( this.datUpdate );
-                folder1.add( this.params, 'offset_speed', 0, 0.03).onChange( this.datUpdate );
+                folder1.add( this.params, 'offset_speed', -0.02, 0.02).onChange( this.datUpdate );
             folder1.open();
           
         }
