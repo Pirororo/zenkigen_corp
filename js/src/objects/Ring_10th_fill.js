@@ -39,7 +39,7 @@ export default class Ring extends THREE.Object3D {
     let Params = function(){
       // size
       this.radius = 150;
-      this.span = 25;
+      this.span = 20;
       this.noise_step = 0.33;
       this.noise_min = 0.71;
       this.noise_max = 0.86;
@@ -50,8 +50,8 @@ export default class Ring extends THREE.Object3D {
       // speed
       this.sin_freq = 0.20;//0.67
       this.noise_speed = 0.031;
-      this.rotateY_speed = 0.004;
-      this.rotateZ_speed = 0.007;
+      this.rotateY_speed = 0.002;
+      this.rotateZ_speed = 0.005;
     }
 
 
@@ -103,8 +103,8 @@ export default class Ring extends THREE.Object3D {
     var folder2 = gui.addFolder('fill_speed');
         folder2.add( this.params, 'sin_freq', 0, 1 ).onChange( this.datUpdate );
         folder2.add( this.params, 'noise_speed', 0, 0.1 ).onChange( this.datUpdate );
-        folder2.add( this.params, 'rotateY_speed', 0, 0.2 ).onChange( this.datUpdate );
-        folder2.add( this.params, 'rotateZ_speed', 0, 0.2).onChange( this.datUpdate );
+        folder2.add( this.params, 'rotateY_speed', 0, 0.1 ).onChange( this.datUpdate );
+        folder2.add( this.params, 'rotateZ_speed', 0, 0.1).onChange( this.datUpdate );
     folder2.open();
 
   }

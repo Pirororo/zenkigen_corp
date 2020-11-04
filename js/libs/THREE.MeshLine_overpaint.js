@@ -427,7 +427,7 @@
 		'uniform float sizeAttenuation;',
 		'uniform float time;',
 		'',
-		'varying vec2 vUV;',
+		// 'varying vec2 vUV;',
 		'varying vec4 vColor;',
 		'varying float vCounters;',
 		'',
@@ -446,7 +446,7 @@
 		'    float pixelWidthRatio = 1. / (resolution.x * projectionMatrix[0][0]);',
 		'',
 		'    vColor = vec4( color, opacity );',
-		'    vUV = uv;',
+		// '    vUV = uv;',
 		'',
 		'    mat4 m = projectionMatrix * modelViewMatrix;',
 		'    vec4 finalPosition = m * vec4( position, 1.0 );',
@@ -516,7 +516,7 @@
 		'uniform float dashGradate;',//custom
 		'uniform float backGradate;',//custom
 		'',
-		'varying vec2 vUV;',
+		// 'varying vec2 vUV;',
 		'varying vec4 vColor;',
 		'varying float vCounters;',
 		'',

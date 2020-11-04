@@ -32,28 +32,6 @@ export class Scene extends THREE.Scene {
         this._ring_fill.visible = false;
         this.add(this._ring_fill);
 
-
-        // // 平行光源
-        // const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        // directionalLight.castShadow = true;
-        // this.add(directionalLight);
-
-         // 環境光源
-         const ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
-         this.add(ambientLight);
-
-         //スポットライト
-        var spotLight = new THREE.SpotLight(0xffffff);
-        spotLight.castShadow = true;
-        spotLight.position.set(500, 300, 800);//
-        spotLight.intensity = 0.8;
-        // spotLight.shadow.mapSize.width = 2048;
-        // spotLight.shadow.mapSize.height = 2048;
-        // spotLight.shadow.camera.fov = 120;
-        // spotLight.shadow.camera.near = 1;
-        // spotLight.shadow.camera.far = 1000;
-        this.add(spotLight);
-
         //円
         this._circle = new Circle();
         this._circle.visible = false;
@@ -135,9 +113,5 @@ export class Scene extends THREE.Scene {
             }
             this._overpaint.update();
         }
-
-
-
-        
     }
 }
